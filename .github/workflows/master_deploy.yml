@@ -17,6 +17,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
       run: npm install
+    
+    - name: Build
+      run: npm run build
+    
     - name: Deploy to GH Pages
       run:
         git config --global user.name $user_name
@@ -27,7 +31,7 @@ jobs:
         user_name: 'ivorgreen'
         user_email: 'ivorrgreen1@gmail.com'
         github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    repository: ${{ github.repository }}
-        npm run deploy
+        repository: ${{ github.repository }}
+    
     - name: Updating Domain
       run: echo "Update domain"
