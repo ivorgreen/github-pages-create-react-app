@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
-      run: wipmty yarn init
+      run: winpty yarn init
     
     - name: Build
       run: yarn run build
