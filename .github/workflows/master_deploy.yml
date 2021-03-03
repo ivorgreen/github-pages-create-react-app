@@ -16,17 +16,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
-      run: npm install
+      run: yarn init
     
     - name: Build
-      run: npm run build
+      run: yarn run build
     
     - name: Deploy to GH Pages
       run:
         git config --global user.name $user_name
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
-        npm run deploy
+        yarn run deploy
       env:
         user_name: "ivorgreen"
         user_email: "ivorrgreen1@gmail.com"
