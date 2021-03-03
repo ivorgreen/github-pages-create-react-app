@@ -16,11 +16,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
-      run: npm init
-    
-    - name: Build
-      run: npm run build
-    
+      run: npm install
     - name: Deploy to GH Pages
       run:
         git config --global user.name $user_name
